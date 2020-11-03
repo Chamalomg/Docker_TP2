@@ -11,8 +11,7 @@ script:
   - docker-compose up
 
   #Ajoute nom:version
-  - docker tag myLittleProject $user/myLittleProject:1.0
+  - docker tag mylittleproject $user/mylittleproject:1.0
 
   #Push sur Docker hub
-  - docker push $user/myLittleProject
-
+  - docker push $user/mylittleproject
