@@ -8,10 +8,14 @@ script:
   - docker login -u $user -p $password
 
   #Build
-  - docker-compose up
+  - docker build -t $user/mylittleproject:database database
+  - docker build -t $user/mylittleproject:httpd httpd
+  - docker build -t $user/mylittleproject:simple-api simple-api
 
   #Ajoute nom:version
-  - docker tag mylittleproject $user/mylittleproject:1.0
+#  - docker tag mylittleproject $user/mylittleproject:1.0
 
   #Push sur Docker hub
-  - docker push $user/mylittleproject
+  - docker push $user/mylittleproject:database
+  - docker push $user/mylittleproject:httpd
+  - docker push $user/mylittleproject:simple-api
