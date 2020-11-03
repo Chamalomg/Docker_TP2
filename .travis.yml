@@ -1,4 +1,18 @@
 language: java
 script:
+  #Lance les tests
   - mvn clean verify --file ./simple-api/pom.xml
+
+  #Connecte à Docker avec les variables d'env
+  #enregistrées au préalable sur Travis
   - docker login -u $user -p $password
+
+  #Build
+  - docker-compose up
+
+  #Ajoute nom:version
+  - docker tag myLittleProject $user/myLittleProject:1.0
+
+  #Push sur Docker hub
+  - docker push $user/myLittleProject
+
