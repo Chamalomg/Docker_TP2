@@ -25,9 +25,15 @@ script:
   - docker push $user/mylittleproject:database
   - docker push $user/mylittleproject:httpd
   - docker push $user/mylittleproject:simple-api
+cache:
+  directories:
+    - $HOME/.m2
+
+services:
+  - docker
 
 
 addons:
   sonarcloud:
     organization: "orgafabien"
-    token: "$SONAR_TOKEN"
+    token: $SONAR_TOKEN
