@@ -30,5 +30,4 @@ script:
 addons:
   sonarcloud:
     organization: "orga"
-    token:
-      secure: "$TOKEN_TRAVIS"
+    token: "$SONAR_TOKEN"
