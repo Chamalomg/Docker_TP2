@@ -9,7 +9,7 @@ script:
   - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
     -Dsonar.projectKey=devops-2020
 
-  - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Docker_TP2
+  - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=chamalomgkey
   - cd ..
   - docker login -u $user -p $password
 
@@ -29,6 +29,6 @@ script:
 
 addons:
   sonarcloud:
-    organization: "chamalomg"
+    organization: "orga"
     token:
       secure: "$TOKEN_TRAVIS"
