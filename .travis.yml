@@ -19,7 +19,6 @@ script:
   - docker push $user/mylittleproject:database
   - docker push $user/mylittleproject:httpd
   - docker push $user/mylittleproject:simple-api
-
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Chamalomg_Docker_TP2
 
 addons:
