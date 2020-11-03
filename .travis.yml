@@ -6,7 +6,10 @@ script:
   #Connecte à Docker avec les variables d'env
   #enregistrées au préalable sur Travis
   - cd ./simple-api/
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Chamalomg_Docker_TP2
+  - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+    -Dsonar.projectKey=devops-2020
+
+  - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Docker_TP2
   - cd ..
   - docker login -u $user -p $password
 
@@ -16,7 +19,7 @@ script:
   - docker build -t $user/mylittleproject:simple-api simple-api
 
   #Ajoute nom:version
-#  - docker tag mylittleproject $user/mylittleproject:1.0
+  #  - docker tag mylittleproject $user/mylittleproject:1.0
 
   #Push sur Docker hub
   - docker push $user/mylittleproject:database
