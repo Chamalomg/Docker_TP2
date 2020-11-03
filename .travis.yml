@@ -29,5 +29,5 @@ script:
 
 addons:
   sonarcloud:
-    organization: "orga"
+    organization: "orgafabien"
     token: "$SONAR_TOKEN"
