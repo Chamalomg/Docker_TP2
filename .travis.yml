@@ -32,7 +32,6 @@ cache:
 services:
   - docker
 
-
 addons:
   sonarcloud:
     organization: "orgafabien"
