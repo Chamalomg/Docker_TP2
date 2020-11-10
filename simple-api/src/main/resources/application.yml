@@ -20,4 +20,3 @@ spring:
       web:
         exposure:
           include: health,info,env,metrics,beans,configprops
-à
